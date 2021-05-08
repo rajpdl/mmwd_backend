@@ -11,7 +11,6 @@ module.exports = async (req, res) => {
       return res.status(400).send({ error: "Password is required." });
     }
     if (user.password != password) {
-      console.log(user);
       user.password = password;
       user.editedAt = Date.now();
       const result = await user.save();

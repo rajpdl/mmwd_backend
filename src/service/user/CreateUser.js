@@ -2,7 +2,6 @@ const { User } = require("../../model/User");
 
 module.exports = async (req, res) => {
   const { username, password } = req.body;
-
   try {
     const takenUser = await User.findOne({ username });
     if (takenUser == null) {

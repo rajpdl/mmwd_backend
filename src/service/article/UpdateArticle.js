@@ -36,6 +36,7 @@ module.exports = async (req, res) => {
     }
 
     if (updated) {
+      art.editedAt = Date.now();
       const article = await art.save();
       return res.status(200).send(article);
     } else {
